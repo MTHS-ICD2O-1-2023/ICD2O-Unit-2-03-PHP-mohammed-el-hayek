@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang=en-ca>
+<html lang="en-ca">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content="The Hello World program, in PHP" />
     <meta name="keywords" content="mths, ics2o" />
-    <meta name="author" content="Mohammed El-hayek" />
+    <meta name="author" content="Mohammed" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-purple.min.css" />
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.pink-purple.min.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
@@ -24,24 +24,18 @@
         </div>
       </header>
       <main class="mdl-layout__content">
+        <div class="right-image">
+          <img src="./images/notebook-animation.svg" alt="laptop image" width="250" />
+        </div>
         <div class="page-content-php">
-          <form action="answer.php" method="POST">
-            <p>Name</p>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" name="name">
-              <label class="mdl-textfield__label" for="name-input">Name here ...</label>
-            </div>
-            <br />
-            <p>Age</p>
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="age">
-              <label class="mdl-textfield__label" for="age-input">Age here ...</label>
-              <span class="mdl-textfield__error">Input is not a number!</span>
-            </div>
-            <br />
-            <!-- Accent-colored raised button with ripple -->
-            <input class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-          </form>
+          <div id="user-info">
+            <?php
+              $name = $_POST["name"];
+              $age = $_POST["age"];
+            
+              echo "Your info is: " . $name . ", age " . $age . ".";
+            ?>
+          </div>
         </div>
       </main>
     </div>
